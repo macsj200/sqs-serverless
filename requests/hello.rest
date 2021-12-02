@@ -1,0 +1,6 @@
+POST https://hzjr17s2a4.execute-api.us-east-1.amazonaws.com/hello HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Foo McBar"
+}
