@@ -23,6 +23,7 @@ const serverlessConfiguration: AWS = {
     },
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
+      WEBHOOK_QUEUE_URL: { Ref: 'WebhookQueue' },
     },
     lambdaHashingVersion: '20201221',
     iamRoleStatements: [
