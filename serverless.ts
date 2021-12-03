@@ -28,6 +28,12 @@ const serverlessConfiguration: AWS = {
     lambdaHashingVersion: '20201221',
     iamRoleStatements: [
       // TODO scope per-function
+      // SQS permissions
+      {
+        Effect: 'Allow',
+        Action: 'sqs:*',
+        Resource: { 'Fn::GetAtt': ['WebhookQueue', 'Arn'] },
+      },
     ],
   },
   // import the function via paths
