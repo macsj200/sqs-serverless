@@ -24,6 +24,32 @@ After inserting a message manually or via the lambda function the queue will be 
 
 The logs for the queue processing lambda function can be viewed by running `serverless logs -f webhookStreamHandler`. This command loads the CloudWatch Logs and prints them to stdout. Alternatively, the CloudWatch Logs can be viewed in the AWS console. Note that this may take a few minutes to create the cloudwatch stream.
 
+<details>
+<summary>
+Sample log output
+</summary>
+
+```
+SQS Record:  {
+  messageId: '102a9767-7835-400e-aa8a-8b0838e55226',
+  receiptHandle: 'AQEBYLStXj67wxNhcPsQHFpjRF+OQWw9UVqtPxYWZBvVRmlQ4Xa419CAwb382c/5OMfd4jE/d9qY+pW5ZHN0LFMbUWUgILfTUz2+iucAvS5VKemx8D908HG06dYT/J4VJiNTPcxgl7+tIjC+i7eALqRP2n3cJHhqFvbwW7g/B3/BKlIs1d2xRBZA54t5U0j/nGXNWU3C8TEQMiKATuYMJZQf59QiUkRvgz7hRCULKTmEv0MafwtSVSoiMKPwuX9gCl06rDmr4dft8nnkE4bLVW3oM2+v5D4i7oFxzpdUrELJ/bVJkWtiqYi5mujUFHNyz2/ajJ3sYv4GtfiJ/ZQCJEGvXiq2QoR5byx5aue4mmNMHWY6qJycnVOFMgi5+bWJJWPQljpSPnlCeKrlteBKQK3uWJaAS2ZcTVyaIDoMg+qlmRhwnBPTmK3zHlwyGifFJtm6',
+  body: '{"message":"Hello from the webhook queue!"}',
+  attributes: {
+    ApproximateReceiveCount: '1',
+    SentTimestamp: '1638493943250',
+    SenderId: 'AROAQ3RP3KLVR3VHL5HO5:sqs-serverless-dev-webhookAddToQueue',
+    ApproximateFirstReceiveTimestamp: '1638493953250'
+  },
+  messageAttributes: {},
+  md5OfBody: '5008ac07e0dec66691cf7daa73461380',
+  eventSource: 'aws:sqs',
+  eventSourceARN: 'arn:aws:sqs:us-east-1:059156157163:sqs-serverless-dev-WebhookQueue-RS08XXYWK0Z2',
+  awsRegion: 'us-east-1'
+}
+```
+
+</details>
+
 ## Testing
 
 This package is linted with `eslint` and unit tests are run via jest by running `yarn test`. This package strives for 100% code coverage.
