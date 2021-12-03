@@ -2,6 +2,7 @@ import type { AWS } from '@serverless/typescript';
 
 import { webhookQueue } from '@resources/webhookQueue';
 import { webhookStreamHandler } from '@functions/webhookStreamHandler';
+import { webhookAddToQueue } from '@functions/webhookAddToQueue';
 
 const serverlessConfiguration: AWS = {
   service: 'sqs-serverless',
@@ -31,6 +32,7 @@ const serverlessConfiguration: AWS = {
   // import the function via paths
   functions: {
     webhookStreamHandler,
+    webhookAddToQueue,
   },
   resources: {
     Resources: {
